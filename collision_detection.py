@@ -65,15 +65,15 @@ class Particle:
         #self.rgb = self.original_rgb.copy()
         self.color = self.original_color
         dist = get_dist(mouse_x,mouse_y,self.x,self.y)
-        if dist < 200:
+        if dist < 150:
             if self.original_rgb[0] == 0:
-                if self.rgb[0] < 200:
+                if self.rgb[0] < 150:
                     self.rgb[0] += 1
             if self.original_rgb[1] == 0:
-                if self.rgb[1] < 200:
+                if self.rgb[1] < 150:
                     self.rgb[1] += 1
             if self.original_rgb[2] == 0:
-                if self.rgb[2] < 200:
+                if self.rgb[2] < 150:
                     self.rgb[2] += 1
 
         r = get_hex(self.rgb[0])
@@ -183,6 +183,7 @@ for i in range(100):
             j += 1
 
     particles.append(Particle(x,y,r,[random.randint(-10,10),random.randint(-10,10)],colors[random.randint(0,len(colors)-1)]))
+
 
 
 while True:
